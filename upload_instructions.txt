@@ -1,0 +1,29 @@
+Para hacer los objetivos del proyecto y ser más organizados, podemos usar la herramienta de Issues que tiene git. Para cada tarea en la que estamos trabajando, vamos a crear un Issue que la describe, y a medida que vayamos completando las tareas, vamos cerrando los Issues, y así tendremos además una forma de ir revisando nuestros avances en el git mismo.
+
+Para abrir un Issue, le dan a Issues jeje, arribita, y le dan a New. Ahí, le ponen un título, una descripción, y pueden más abajo poner quiénes trabajarán en el Issue (Assignees), que yo supongo que eso se puede cambiar incluso luego de haber creado el Issue. También es bueno ponerle una Label, como para identificar bien de qué trata el Issue (si va a ser una adición nueva de código, o si es un bug o un problema de compilación, etc).
+
+Para ir construyendo el código, la mejor práctica es ir trabajando en ramas a parte de la principal, y luego juntarlas (así si algo no funciona no se caga todo, o si llegamos a un punto donde todo se caga podemos revertirnos a una etapa anterior).
+
+Para crear una rama nueva, se usa:
+
+git checkout -b NombreDeLaRama
+
+Para el nombre de la rama que creen, creo que sería también buena idea ponerle algo relativo al Issue que se está trabajando (y evitar ponerles nombres como "caca", "pedo", "moco", etc, como lo hago yo).
+
+Para revisar en qué rama están trabajando, usan
+
+git status
+
+Ahora, para juntar las ramas, primero se pasan a la rama principal (este comando también sirve para moverse a cualquier rama, sólo ponen git checkout NombreDeLaRamaDondeQuierenIr):
+
+git checkout NombreDeLaRamaPrincipal  (en nuestro caso, por ahora, esta se llama "master")
+
+Y luego hacen
+
+git merge NombreDeLaRamaQueVanAJuntar
+
+Finalmente, para ver qué ramas hay disponibles, pueden usar el comando
+
+git branch -a
+
+Una sugerencia, para hacer los commits, se acostumbra a hacerlo en inglés, todo en minúsculas, y en imperativo. Si algo, podemos guiarnos de acá https://www.conventionalcommits.org/en/v1.0.0/
