@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
+s_diff_eq :: s_diff_eq(vector <double> cond)
+{
+  boundary_c = cond;
+}
+
+s_diff_eq ::

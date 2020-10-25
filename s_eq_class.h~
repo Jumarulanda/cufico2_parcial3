@@ -1,0 +1,20 @@
+#include <vector>
+
+using namespace std;
+
+class s_diff_eq
+
+{
+ public:
+  s_diff_eq(vector <double>);
+  vector <double> boundary_c;
+  double f_yp(vector <double> (*)(double),double,vector <double>);
+  double sep_eq_1(vector <double> (*)(double),double,vector <double>);
+  double sep_eq_2(vector <double> (*)(double),double,vector <double>);
+  double initial_c_1;
+  double initial_c_2;
+ private:
+  double px;
+  double qx;
+  double rx;
+}
