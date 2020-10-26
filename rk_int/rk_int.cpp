@@ -16,7 +16,7 @@ rk_int :: rk::rk(){
 }
 
 
-double rk_int :: rk::rk4_step(double f (double,vector<double>), double y_i, vector<double> y_n, double t_n){
+double rk_int :: rk::rk4_step(s_diff_eq:: double f(double,vector<double>), double y_i, vector<double> y_n, double t_n){
 	double k1 = t_step * f(t_n, y_n);
 	double k2 = t_step * f(t_n + t_step*0.5, vec_sum(y_n, k1*0.5));
 	double k3 = t_step * f(t_n + t_step*0.5, vec_sum(y_n, k2*0.5));
@@ -59,7 +59,7 @@ vector<double> rk_int :: rk::eval_v_step(vector<double (s_diff_eq::*)(double,vec
 
 	int vsize = f_syst.size();
 	for (int i=0; i < vsize; i++){
-		y_np1.push_back(rk4_step(f_syst[i], y_n[i], y_n, t_n));
+	  y_np1.push_back(rk4_step(f_syst[i], y_n[i], y_n, t_n));
 	}	
 
 	y_np1.push_back(t_n);
