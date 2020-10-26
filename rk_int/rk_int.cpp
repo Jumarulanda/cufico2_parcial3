@@ -16,7 +16,11 @@ rk_int :: rk::rk(){
 }
 
 
+<<<<<<< HEAD
 double rk_int :: rk::rk4_step(s_diff_eq:: double f(double,vector<double>), double y_i, vector<double> y_n, double t_n){
+=======
+double rk_int :: rk::rk4_step((s_diff_eq::*)(double,vector<double>)> f, double y_i, vector<double> y_n, double t_n){
+>>>>>>> 3dadb2dbf323786c3672b49855d7cc4e922ca02a
 	double k1 = t_step * f(t_n, y_n);
 	double k2 = t_step * f(t_n + t_step*0.5, vec_sum(y_n, k1*0.5));
 	double k3 = t_step * f(t_n + t_step*0.5, vec_sum(y_n, k2*0.5));
