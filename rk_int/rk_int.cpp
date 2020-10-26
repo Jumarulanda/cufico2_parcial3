@@ -1,5 +1,6 @@
 #include "rk_int.h"
 
+
 vector<double> vec_sum(vector<double> vec, double sum){
 	int vsize = vec.size();
 	for (int i = 0; i < vsize; i++){

@@ -1,10 +1,14 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include "../s_equations/s_eq_class.h"
+
+
 
 using std::vector;
 using std::cout;
 using std::endl;
+
 
 namespace rk_int{
 
@@ -12,7 +16,7 @@ namespace rk_int{
 	class rk{
 		public:
 		rk();
-		vector<vector<double>> odint_rk4(vector<double (*)(double,vector<double>)>, vector<double>, double);	
+	  vector<vector<double>> odint_rk4(vector<double (s_diff_eq::*)(double,vector<double>)>, vector<double>, double);	
 
 		void set_tstep(double);
 
@@ -23,7 +27,7 @@ namespace rk_int{
 		/* double rk6_step(double (double,vector<double>),double,vector<double>,double); */
 		/* double rk8_step(double (double,vector<double>),double,vector<double>,double); */
 
-		vector<double> eval_v_step(vector<double (*)(double,vector<double>)>, vector<double>, double);
+	  vector<double> eval_v_step(vector<double (s_diff_eq::*)(double,vector<double>)>, vector<double>, double);
 		void print_tevol(vector<double>);
 	};
 

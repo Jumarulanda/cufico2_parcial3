@@ -9,8 +9,26 @@ vector <double> f(double);
 
 int main()
 {
-  vector <double> v {1,2};
-  s_diff_eq trying_class(v,f);
+  rk_int :: rk rk_integrator;
+  //rk_int rk_integrator();
+  vector <double> boundary {1,2}; //boundary conditions 
+  s_diff_eq trying_class(boundary,f); //initializing class for equations separation.
+  //s_diff_eq* Ptr_sep_eq; 
+  //Ptr_sep_eq->y_prime;
+  
+  double t_step = 0.1;
+
+  vector<vector<double>> solutions;
+  double (s_diff_eq::*Ptr_dy)(double, vector <double> ) = &s_diff_eq::y_prime;
+  double (s_diff_eq::*Ptr_ddy_1)(double, vector <double> ) = &s_diff_eq::y_dprime_1;
+  //dy = trying_class.y_prime;
+  vector<double (s_diff_eq::*)(double,vector<double>)> ode_syst_1 = {Ptr_dy,Ptr_ddy_1};
+  double t_end = boundary[1];
+  solutions = rk_integrator.odint_rk4(ode_syst_1,trying_class.init_cond_eq_1, t_end); 
+  
+  
+ 
+  
   
 }
 

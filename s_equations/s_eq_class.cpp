@@ -10,8 +10,8 @@ s_diff_eq :: s_diff_eq(vector <double> cond, vector <double> (*f)(double))
 {
   boundary_c = cond;
   pfunc = f;
-  init_cond_eq_1 = {boundary_c[0],0};
-  init_cond_eq_2 = {0,1};
+  init_cond_eq_1 = {boundary_c[0],0,0};// vector {y, y', x} 
+  init_cond_eq_2 = {0,1,0};// vector {y, y', x}
 }
 /*
 //checking that everything works!
