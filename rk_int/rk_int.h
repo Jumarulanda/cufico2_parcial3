@@ -23,7 +23,7 @@ namespace rk_int{
 		private:
 		float t_step;
 
-		double rk4_step(double (double,vector<double>),double,vector<double>,double);
+		double rk4_step(double (s_diff_eq::*)(double,vector<double>) ,double,vector<double>,double);
 		/* double rk6_step(double (double,vector<double>),double,vector<double>,double); */
 		/* double rk8_step(double (double,vector<double>),double,vector<double>,double); */
 

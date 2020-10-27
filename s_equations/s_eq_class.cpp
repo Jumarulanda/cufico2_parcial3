@@ -13,16 +13,7 @@ s_diff_eq :: s_diff_eq(vector <double> cond, vector <double> (*f)(double))
   init_cond_eq_1 = {boundary_c[0],0,0};// vector {y, y', x} 
   init_cond_eq_2 = {0,1,0};// vector {y, y', x}
 }
-/*
-//checking that everything works!
-void s_diff_eq :: printer(double x)
-{
-  vector <double> vect = pfunc(x);
-  for (double i: vect)
-    cout << i << endl;
-  
-    }*/
-//this function is equivalent to y' = u
+
 double s_diff_eq:: y_prime (double x, vector <double> vect)
 {
   double dy = vect[1];
