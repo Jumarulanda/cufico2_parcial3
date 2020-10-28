@@ -1,8 +1,8 @@
 
 #include <iostream>
 #include <vector>
-
-//using namespace std;
+//#include "../rk_int/rk_int.h"
+using namespace std;
 
 class s_diff_eq
 
@@ -19,6 +19,7 @@ class s_diff_eq
   double y_dprime_2 (double ,std:: vector <double>);
   std::vector<double> init_cond_eq_1;
   std::vector<double> init_cond_eq_2;
- private:
-   std::vector <double> (*pfunc)(double);
+  //vector<vector<double>> rk4_imp(void);
+private:
+  std::vector <double> (*pfunc)(double);
 };

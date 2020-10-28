@@ -55,7 +55,7 @@ double rk_int :: rk::rk4_step(double (*f)(double,vector<double>)  , double y_i, 
 /* 	return y_i + t_step*(41.*k_1 + 27.*k_4 + 272.*k_5 + 27.*k_6 + 216.*k_7 + 216.*k_9 + 41.*k_10)/840.; */
 /* } */
 
-vector<double> rk_int :: rk::eval_v_step(vector<double (s_diff_eq::*)(double,vector<double>)> f_syst, vector<double> y_n, double t_n){	
+vector<double> rk_int :: rk::eval_v_step(vector<double (*)(double,vector<double>)> f_syst, vector<double> y_n, double t_n){	
 	vector<double> y_np1;
 
 	int vsize = f_syst.size();
@@ -67,7 +67,7 @@ vector<double> rk_int :: rk::eval_v_step(vector<double (s_diff_eq::*)(double,vec
 	return y_np1;
 }
 
-vector<vector<double>> rk_int :: rk::odint_rk4(vector<double (s_diff_eq::*)(double,vector<double>)> f_syst, vector<double> c_0, double t_f){
+vector<vector<double>> rk_int :: rk::odint_rk4(vector<double (*)(double,vector<double>)> f_syst, vector<double> c_0, double t_f){
 
 	vector<vector<double>> syst_states = {c_0};
 	print_tevol(c_0);	
