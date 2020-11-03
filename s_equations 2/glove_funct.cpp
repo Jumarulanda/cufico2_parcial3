@@ -18,7 +18,7 @@ void solution(double); //solve the differential equations  for y1 and y2
 //Joint the solutions for y1 and y2 of the integrator
 void joint_sol(vector<vector<double>>solution_1,vector<vector<double>>solution_2,double t_step);
 
-vector <double> boundary {2,2,0,1}; //vector with componentes [y(a),y(b),a,b]
+vector <double> boundary {-2.,4.,0.,10.}; //vector with componentes [y(a),y(b),a,b]
 
 s_diff_eq c_ins(boundary,f); //instance to convert a boundary conditions problem into a intial conditions differential equation problem
 
