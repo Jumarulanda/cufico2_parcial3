@@ -66,7 +66,7 @@ def esferas(x):
 
 true_sol = esferas(read_data[:,-1])
 ##true_sol[-1]=1e-8
-convergence = np.absolute((true_sol-read_data[:,))
+convergence = np.absolute((true_sol-read_data[:,0]))
 
 fig2 = plt.figure(constrained_layout = True)
 plt.plot(read_data[:,-1],convergence,linestyle='-',linewidth=1,color='black')
