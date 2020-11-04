@@ -23,13 +23,13 @@ fig = plt.figure(constrained_layout = True)
 
 grid = fig.add_gridspec(nrows = 2, ncols = 2)
 
-f_yt = fig.add_subplot(grid[0,1])
-f_ypt = fig.add_subplot(grid[0,0])
-f_ypy = fig.add_subplot(grid[1,:])
+f_yt = fig.add_subplot(grid[1,:])
+f_ypt = fig.add_subplot(grid[0,1])
+f_ypy = fig.add_subplot(grid[0,0])
 
-f_yt.plot(read_data[:,-1],read_data[:,0],linestyle='-',linewidth=1,color='black')
-f_ypt.plot(read_data[:,-1],read_data[:,1],linestyle='-',linewidth=1,color='black')
-f_ypy.plot(read_data[:,0],read_data[:,1],linestyle='-',linewidth=1,color='black')
+f_yt.plot(read_data[:,-1],read_data[:,0],linestyle='-',linewidth=1,color='blue')
+f_ypt.plot(read_data[:,-1],read_data[:,1],linestyle='-',linewidth=1,color='blue')
+f_ypy.plot(read_data[:,0],read_data[:,1],linestyle='-',linewidth=1,color='blue')
 
 # plot styling
 
