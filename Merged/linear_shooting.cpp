@@ -50,7 +50,7 @@ int main()
     auto r = [](double x){return df::f(x)[2];};
     
     vector <double (*)(double)> F;
-    F = {p,q,r};
+    F = {*p,*q,*r};
     bool B = tools::check_conditions(F,df::boundary[2],df::boundary[3]);
     
     if (not(B))
