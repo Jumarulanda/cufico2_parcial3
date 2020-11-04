@@ -25,7 +25,13 @@ int main(){
 
 	// set a final integration time and run integrating function
 	double t_end = 5.0;
-	solutions = rk_integrator.odint_rk4(ode_syst, c0, t_end); 
+	solutions = rk_integrator.odint_rk4(ode_syst, c0, t_end);
+	for (vector <double> i: solutions)
+	  {
+	    for (double j:i)
+	      cout << j<<",";
+	    cout << '\n';
+	  }
 
 	return 0;
 }
