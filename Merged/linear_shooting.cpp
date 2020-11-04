@@ -34,8 +34,8 @@ namespace df
     
     double glove_3(double x,  vector <double> y)
     {
-    double result = c_ins.y_dprime_2(x,y);
-    return result;
+    	double result = c_ins.y_dprime_2(x,y);
+    	return result;
     }
 }
 
@@ -76,7 +76,7 @@ int main()
     // Calculating the solutions
     double t_end = df::boundary[3];
     solutions_1  = rk_integrator.odint_rk4(ode_syst_1,df::c_ins.init_cond_eq_1, t_end);
-    solutions_2  = rk_integrator.odint_rk4(ode_syst_1,df::c_ins.init_cond_eq_2, t_end);
+    solutions_2  = rk_integrator.odint_rk4(ode_syst_2,df::c_ins.init_cond_eq_2, t_end);
     
     ofstream file ("diff_sol.txt"); // File for storing solutions
     

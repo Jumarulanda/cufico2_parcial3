@@ -112,7 +112,7 @@ double s_diff_eq::y_dprime_2 (double x, vector <double> vect)
 {
     //v_funct contains [p(x),q(x),r(x)]
     vector <double> v_func = pfunc(x); //v_funct contains [p(x),q(x),r(x)]
-    double du = v_func[0]*vect[1]+v_func[1]*vect[0]+v_func[2];
+    double du = v_func[0]*vect[1]+v_func[1]*vect[0];
     return du;
 }
 
@@ -207,6 +207,7 @@ void tools::joint_sol(vector<vector<double>>solution_1, vector<vector<double>>so
     {
         for (int i=0; i<=N ; i++)
         {
+			
             W1 = solution_1[i][0]+w20*solution_2[i][0];
 	        W2 = solution_1[i][1]+w20*solution_2[i][1];
 	        x =  solution_1[i][2];
