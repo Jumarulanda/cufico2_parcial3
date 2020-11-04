@@ -158,15 +158,12 @@ vector<double> rk_int :: rk::eval_v_step(vector<double (*)(double,vector<double>
 vector<vector<double>> rk_int :: rk::odint_rk4(vector<double (*)(double,vector<double>)> f_syst, vector<double> c_0, double t_f){
 
 	vector<vector<double>> syst_states = {c_0};
-	print_tevol(c_0);	
 
 	for (double t = c_0.back()+t_step; t <= t_f+t_step; t += t_step){
 		vector<double> curr_state = syst_states.back();	
 		vector<double> c_i = vector<double> (curr_state.begin(), curr_state.end() - 1);
 		
 		vector<double> next_state = eval_v_step(f_syst, c_i, t);
-
-		/* print_tevol(next_state); */
 
 		syst_states.push_back(next_state);
 	}
