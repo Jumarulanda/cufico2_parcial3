@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # def prog arguments
 
 parser = arp.ArgumentParser()
-parser.add_argument("example2", help="String with the path of the plotting data")
+parser.add_argument("diff_sol", help="String with the path of the plotting data")
 args = parser.parse_args()
 
 # plot font parameters
@@ -15,7 +15,7 @@ plt.rcParams['mathtext.rm'] = 'dejavuserif'
 plt.rcParams['mathtext.it'] = 'dejavuserif'
 plt.rcParams['mathtext.bf'] = 'dejavuserif'
 
-read_data = np.genfromtxt(args.example2, delimiter=",", skip_header=1)
+read_data = np.genfromtxt(args.diff_sol, delimiter=",", skip_header=1)
 
 # figure construction
 
@@ -48,12 +48,12 @@ plt.show()
 
 ###### Cálculo de convergencia ###
 
-"""
 def sol_book_example(x):
     c2 = (8-12*np.sin(np.log(2))-4*np.cos(np.log(2)))/70
     c1 = 11/10-c2 
     y = c1*x + c2/x**2 -3*np.sin(np.log(x))/10-np.cos(np.log(x))/10
-    return y """
+    return y
+"""
 V1 = 110
 R1 = 2
 R2 = 4
@@ -61,15 +61,16 @@ R2 = 4
 def esferas(x):
     u = V1*R1*((R2-x)/(R2-R1))/x
     return u
-    
+"""    
 
-true_sol = esferas(read_data[:,-1])
+true_sol = sol_book_example(read_data[:,-1])
 ##true_sol[-1]=1e-8
 convergence = np.absolute((true_sol-read_data[:,0]))
 
 fig2 = plt.figure(constrained_layout = True)
-plt.plot(read_data[:,-1],convergence,linestyle='-',linewidth=1,color='black')
+plt.plot(read_data[:,-1],convergence,linestyle='-',linewidth=1,color='blue')
 plt.xlabel("x",fontsize=14)
 plt.ylabel("Convergence",fontsize = 14)
 plt.show()
+
 
