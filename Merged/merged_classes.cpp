@@ -197,7 +197,7 @@ void tools::joint_sol(vector<vector<double>>solution_1, vector<vector<double>>so
 { 
     int N = (boundary[3]-boundary[2])/t_step;
     cout << "N_value: " << N << endl;
-    double w20 =  (boundary[3] - solution_1[N][0])/solution_2[N][0];
+    double w20 =  (boundary[2] - solution_1[N][0])/solution_2[N][0];
 
     double W1;
     double W2;
