@@ -151,7 +151,7 @@ vector<double> rk_int :: rk::eval_v_step(vector<double (*)(double,vector<double>
 		y_np1.push_back(rk4_step(f_syst[i], y_n[i], y_n, t_n));
 	}	
 
-	y_np1.push_back(t_n);
+	y_np1.push_back(t_n+t_step);
 	return y_np1;
 }
 
@@ -159,7 +159,7 @@ vector<vector<double>> rk_int :: rk::odint_rk4(vector<double (*)(double,vector<d
 
 	vector<vector<double>> syst_states = {c_0};
 
-	for (double t = c_0.back()+t_step; t <= t_f+t_step; t += t_step){
+	for (double t = c_0.back(); t <= t_f; t += t_step){
 		vector<double> curr_state = syst_states.back();	
 		vector<double> c_i = vector<double> (curr_state.begin(), curr_state.end() - 1);
 		
