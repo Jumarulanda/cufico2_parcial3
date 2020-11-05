@@ -47,13 +47,13 @@ plt.show()
 
 
 ###### Cálculo de convergencia ###
-
+"""
 def sol_book_example(x):
     c2 = (8-12*np.sin(np.log(2))-4*np.cos(np.log(2)))/70
     c1 = 11/10-c2 
     y = c1*x + c2/x**2 -3*np.sin(np.log(x))/10-np.cos(np.log(x))/10
     return y
-"""
+
 V1 = 110
 R1 = 2
 R2 = 4
@@ -61,7 +61,7 @@ R2 = 4
 def esferas(x):
     u = V1*R1*((R2-x)/(R2-R1))/x
     return u
-"""    
+    
 
 true_sol = sol_book_example(read_data[:,-1])
 ##true_sol[-1]=1e-8
@@ -74,3 +74,4 @@ plt.ylabel("Convergence",fontsize = 14)
 plt.show()
 
 
+"""

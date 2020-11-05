@@ -91,7 +91,7 @@ s_diff_eq::s_diff_eq(vector <double> cond, vector <double> (*f)(double))
     // vector {y, y', x}
     init_cond_eq_2 = {0,1,boundary_c[2]};
 }
-
+//equivalent equation for y'(x) = u(x)
 double s_diff_eq::y_prime (double x, vector <double> vect)
 {
     double dy = vect[1];
@@ -189,8 +189,8 @@ void rk_int :: rk::print_tevol(vector<double> c_n){
 void tools::joint_sol(vector<vector<double>>solution_1, vector<vector<double>>solution_2, double t_step, vector<double> boundary, ofstream *file)
 { 
     int N = (boundary[3]-boundary[2])/t_step;
-    cout << "N_value: " << N << endl;
-    double w20 =  (boundary[1] - solution_1[N][0])/solution_2[N][0];
+    cout << "N_value: " << N << endl; 
+    double w20 =  (boundary[1] - solution_1[N][0])/solution_2[N][0]; //equivalent to w02 = (beta-y1(b))/y2(b)
 
     double W1;
     double W2;
@@ -201,10 +201,10 @@ void tools::joint_sol(vector<vector<double>>solution_1, vector<vector<double>>so
         for (int i=0; i<=N ; i++)
         {
 			
-            W1 = solution_1[i][0]+w20*solution_2[i][0];
-	        W2 = solution_1[i][1]+w20*solution_2[i][1];
-	        x =  solution_1[i][2];
-	        *file << W1 << "," << W2 << "," << x << "\n";
+	  W1 = solution_1[i][0]+w20*solution_2[i][0]; //equivalent to y(x) = y1(x)+w20y2(x)
+	  W2 = solution_1[i][1]+w20*solution_2[i][1]; //equivalent to y'(x) = y1'(x)+w20y2'(x)
+	  x =  solution_1[i][2];
+	  *file << W1 << "," << W2 << "," << x << "\n";
         }
     }
 }
